@@ -533,29 +533,15 @@ function hmrAcceptRun(bundle, id) {
 
 },{}],"bB7Pu":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-var _scrollReveal = require("./scripts/scrollReveal");
+var _scrollReveal = require("./src/scripts/scrollReveal");
 var _scrollRevealDefault = parcelHelpers.interopDefault(_scrollReveal);
-var _tiltAnimation = require("./scripts/tiltAnimation");
+var _tiltAnimation = require("./src/scripts/tiltAnimation");
 var _tiltAnimationDefault = parcelHelpers.interopDefault(_tiltAnimation);
-var _scrollRevealConfig = require("./data/scrollRevealConfig");
+var _scrollRevealConfig = require("./src/data/scrollRevealConfig");
 (0, _scrollRevealDefault.default)((0, _scrollRevealConfig.targetElements), (0, _scrollRevealConfig.defaultProps));
 (0, _tiltAnimationDefault.default)();
 
-},{"./scripts/scrollReveal":"bGCKz","./scripts/tiltAnimation":"fnP06","./data/scrollRevealConfig":"eULZq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bGCKz":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-function initScrollReveal(targetElements, defaultProps) {
-    if (!targetElements.length) return;
-    ScrollReveal({
-        reset: false
-    });
-    targetElements.forEach(({ element , animation  })=>{
-        ScrollReveal().reveal(element, Object.assign({}, defaultProps, animation));
-    });
-}
-exports.default = initScrollReveal;
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./src/data/scrollRevealConfig":"5aORV","./src/scripts/scrollReveal":"54rka","./src/scripts/tiltAnimation":"72kAb"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -585,7 +571,93 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}],"fnP06":[function(require,module,exports) {
+},{}],"5aORV":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "defaultProps", ()=>defaultProps);
+parcelHelpers.export(exports, "targetElements", ()=>targetElements);
+const defaultProps = {
+    easing: "cubic-bezier(0.5, 0, 0, 1)",
+    distance: "30px",
+    duration: 1000,
+    desktop: true,
+    mobile: true
+};
+const targetElements = [
+    {
+        element: ".section-title",
+        animation: {
+            delay: 300,
+            distance: "0px",
+            origin: "bottom"
+        }
+    },
+    {
+        element: ".hero-title",
+        animation: {
+            delay: 500,
+            origin: window.innerWidth > 768 ? "left" : "bottom"
+        }
+    },
+    {
+        element: ".hero-cta",
+        animation: {
+            delay: 1000,
+            origin: window.innerWidth > 768 ? "left" : "bottom"
+        }
+    },
+    {
+        element: ".about-wrapper__image",
+        animation: {
+            delay: 600,
+            origin: "bottom"
+        }
+    },
+    {
+        element: ".about-wrapper__info",
+        animation: {
+            delay: 1000,
+            origin: window.innerWidth > 768 ? "left" : "bottom"
+        }
+    },
+    {
+        element: ".project-wrapper__text",
+        animation: {
+            delay: 500,
+            origin: window.innerWidth > 768 ? "left" : "bottom"
+        }
+    },
+    {
+        element: ".project-wrapper__image",
+        animation: {
+            delay: 1000,
+            origin: window.innerWidth > 768 ? "right" : "bottom"
+        }
+    },
+    {
+        element: ".contact-wrapper",
+        animation: {
+            delay: 800,
+            origin: "bottom"
+        }
+    }, 
+];
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"54rka":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+function initScrollReveal(targetElements, defaultProps) {
+    if (!targetElements.length) return;
+    ScrollReveal({
+        reset: false
+    });
+    targetElements.forEach(({ element , animation  })=>{
+        ScrollReveal().reveal(element, Object.assign({}, defaultProps, animation));
+    });
+}
+exports.default = initScrollReveal;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"72kAb":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _vanillaTilt = require("vanilla-tilt");
@@ -951,78 +1023,6 @@ if (typeof document !== "undefined") {
 }
 module.exports = VanillaTilt;
 
-},{}],"eULZq":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "defaultProps", ()=>defaultProps);
-parcelHelpers.export(exports, "targetElements", ()=>targetElements);
-const defaultProps = {
-    easing: "cubic-bezier(0.5, 0, 0, 1)",
-    distance: "30px",
-    duration: 1000,
-    desktop: true,
-    mobile: true
-};
-const targetElements = [
-    {
-        element: ".section-title",
-        animation: {
-            delay: 300,
-            distance: "0px",
-            origin: "bottom"
-        }
-    },
-    {
-        element: ".hero-title",
-        animation: {
-            delay: 500,
-            origin: window.innerWidth > 768 ? "left" : "bottom"
-        }
-    },
-    {
-        element: ".hero-cta",
-        animation: {
-            delay: 1000,
-            origin: window.innerWidth > 768 ? "left" : "bottom"
-        }
-    },
-    {
-        element: ".about-wrapper__image",
-        animation: {
-            delay: 600,
-            origin: "bottom"
-        }
-    },
-    {
-        element: ".about-wrapper__info",
-        animation: {
-            delay: 1000,
-            origin: window.innerWidth > 768 ? "left" : "bottom"
-        }
-    },
-    {
-        element: ".project-wrapper__text",
-        animation: {
-            delay: 500,
-            origin: window.innerWidth > 768 ? "left" : "bottom"
-        }
-    },
-    {
-        element: ".project-wrapper__image",
-        animation: {
-            delay: 1000,
-            origin: window.innerWidth > 768 ? "right" : "bottom"
-        }
-    },
-    {
-        element: ".contact-wrapper",
-        animation: {
-            delay: 800,
-            origin: "bottom"
-        }
-    }, 
-];
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["awEvQ","bB7Pu"], "bB7Pu", "parcelRequire6aa4")
+},{}]},["awEvQ","bB7Pu"], "bB7Pu", "parcelRequire6aa4")
 
 //# sourceMappingURL=index.3d214d75.js.map
