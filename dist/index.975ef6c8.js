@@ -541,21 +541,7 @@ var _scrollRevealConfig = require("./data/scrollRevealConfig");
 (0, _scrollRevealDefault.default)((0, _scrollRevealConfig.targetElements), (0, _scrollRevealConfig.defaultProps));
 (0, _tiltAnimationDefault.default)();
 
-},{"./scripts/scrollReveal":"54rka","./scripts/tiltAnimation":"72kAb","./data/scrollRevealConfig":"5aORV","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"54rka":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-function initScrollReveal(targetElements, defaultProps) {
-    if (!targetElements.length) return;
-    ScrollReveal({
-        reset: false
-    });
-    targetElements.forEach(({ element , animation  })=>{
-        ScrollReveal().reveal(element, Object.assign({}, defaultProps, animation));
-    });
-}
-exports.default = initScrollReveal;
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./scripts/scrollReveal":"54rka","./scripts/tiltAnimation":"72kAb","./data/scrollRevealConfig":"5aORV"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -585,7 +571,21 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}],"72kAb":[function(require,module,exports) {
+},{}],"54rka":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+function initScrollReveal(targetElements, defaultProps) {
+    if (!targetElements.length) return;
+    ScrollReveal({
+        reset: false
+    });
+    targetElements.forEach(({ element , animation  })=>{
+        ScrollReveal().reveal(element, Object.assign({}, defaultProps, animation));
+    });
+}
+exports.default = initScrollReveal;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"72kAb":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _vanillaTilt = require("vanilla-tilt");

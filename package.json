@@ -3,9 +3,9 @@
   "name": "simplefolio",
   "version": "1.0.1",
   "private": "true",
-  "source": "index.html",
+  "source": "src/index.html",
   "scripts": {
-    "start": "parcel index.html",
+    "start": "parcel src/index.html",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "build": "parcel build"
