@@ -1,10 +1,13 @@
 {
+  "homepage": "http://isaicastro1.github.io/Portfolio-Website",
   "name": "simplefolio",
   "version": "1.0.1",
   "private": "true",
   "source": "src/index.html",
   "scripts": {
     "start": "parcel index.html",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "parcel build"
   },
   "repository": {
@@ -13,6 +16,7 @@
   "keywords": [],
   "devDependencies": {
     "@parcel/transformer-sass": "^2.0.1",
+    "gh-pages": "^4.0.0",
     "parcel": "^2.0.1",
     "prettier": "^2.4.1",
     "sass": "^1.53.0"
