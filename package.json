@@ -3,12 +3,12 @@
   "name": "simplefolio",
   "version": "1.0.1",
   "private": "true",
-  "source": "src/index.html",
+  "source": "public/index.html",
   "scripts": {
-    "start": "parcel src/index.html",
+    "start": "parcel public/index.html",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d src",
-    "build": "parcel build"
+    "deploy": "gh-pages -d build",
+    "build": "react-scripts build"
   },
   "repository": {
     "type": "git"
@@ -29,6 +29,19 @@
     "jquery": "^3.6.0",
     "npm": "^8.13.2",
     "popper.js": "^1.16.1",
+    "react-scripts": "^5.0.1",
     "vanilla-tilt": "^1.7.2"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
