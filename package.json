@@ -6,6 +6,7 @@
   "source": "public/index.html",
   "scripts": {
     "start": "parcel public/index.html",
+    "watch:sass": "sass --watch src/styles.scss:src/styles.css",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "build": "react-scripts build"
